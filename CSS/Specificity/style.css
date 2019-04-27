@@ -1,0 +1,19 @@
+#id {
+    background-color: blueviolet;
+}
+
+html .class {
+    background-color: tomato;
+}
+
+.class {
+    background-color: goldenrod;
+}
+
+html body {
+    background-color: aqua;
+}
+
+body {
+    background-color: goldenrod;
+}
