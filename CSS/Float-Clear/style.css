@@ -1,0 +1,35 @@
+.box {
+    height: 200px;
+    width: 200px;
+    /* float: left; */
+}
+
+.tomato {
+    float: right;
+    height: 80px;
+    width: 80%;
+}
+
+.purple {
+    float: left;
+    width: 20%;
+    height: 600px;
+}
+
+.gold {
+    clear: right;
+    float: right;
+    width: 80%;
+    height: 440px;
+}
+
+.green {
+    clear: right;
+    float: right;
+    width: 80%;
+    height: 80px;
+}
+
+.clearfix {
+    clear: both;
+}
