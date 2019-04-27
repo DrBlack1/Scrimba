@@ -1,0 +1,21 @@
+#header {
+    background: #44accf;
+    height: 50px;
+}
+#content {
+    background: #b7d84b;
+    width: 75%;
+    height: 400px;
+    float: left;
+}
+#navigation {
+    background: #e2a741;
+    width: 25%;
+    height: 400px;
+    float: right;
+}
+#footer {
+    background: #ee3e64;
+    height: 50px;
+    clear: both;
+}
