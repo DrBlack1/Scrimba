@@ -1,0 +1,33 @@
+:root {
+    --red: #ff6f69;
+    --beige: #ffeead;
+    --yellow: #ffcc5c;
+    --main-color: var(--red);
+}
+
+html, body {
+    background: var(--beige);
+    color: var(--red);
+}
+
+h1, p {
+    color: var(--red);
+}
+
+#navbar {
+    --main-color: orange;
+}
+
+#navbar a {
+    color: var(--main-color);
+}
+
+.item {
+    --red: orange;
+    background: var(--yellow);
+}
+
+button {
+    background: var(--red);
+    color: var(--yellow);
+}
