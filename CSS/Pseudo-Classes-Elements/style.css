@@ -1,0 +1,5 @@
+ul a:hover::before {
+    content: ">";
+    color: red;
+    margin-right: 20px;
+}
