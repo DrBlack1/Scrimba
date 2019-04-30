@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <!-- <link rel="stylesheet" href="styles/debug.css"> -->
+    <style>
+        
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        is-paddingless-horizontal { padding-left: 0; padding-right: 0; }
+
+        .grid {
+            display: grid;
+            grid-template-columns:
+            [xl-start] 1fr 1.5rem [md-start] minmax(0, 624px) [md-end] 1.5rem 1fr [xl-end];
+        }
+
+        .grid * { grid-column: md; }
+        .grid-xl { grid-column: xl; }
+
+    </style>
+</head>
+<body>
+
+    <!-- .section -->
+    <section class="section is-paddingless-horizontal">
+        <div class="container grid">
+            <nav class="breadcrumb grid-xl" aria-label="breadcrumb">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li class="is-active"><a href="#" aria-current="page">How to build a
+                        beautiful blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+    <!-- /.section -->
+
+    <section class="section is-paddingless-horizontal" style="padding-top: 0;">
+        <div class="container grid">
+
+            <!-- .media -->
+            <article class="media center">
+                <figure class="media-left">
+                    <figure class="image is-64x64">
+                        <img src="image/me.jpg">
+                    </figure>
+                </figure>
+                <div class="media-content">
+                    <div class="content">
+                        <p>
+                            <strong>Zaydek Michels-Gualtieri</strong>
+                            <a>@username_zaydek</a><br>
+                            <span class="has-text-grey">Self-taught, inspired to learn<br>
+                            <time datetime="2018-04-20">Apr 20</time> . 20 min read</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+            <!-- /.media -->
+
+            <!-- .section -->
+            <div class="section is paddingless-horizontail">
+                <h1 class="title is-2">
+                    How to build a beautiful blg
+                </h1>
+                <h2 class="subtitle is-3 has-text-grey-light">
+                    Learn from first-principles
+                </h2>
+            </div>
+            <!-- /.section -->
+
+            <!-- .columns -->
+            <figure class="columns is-mobile is-variable is-0 is-marginless grid-xl">
+                <div class="columns">
+                    <div class="image card">
+                        <a><img src="images/blog-1.png"></a>
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="image card">
+                        <a><img src="images/blog-2.png"></a>
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="image card">
+                        <a><img src="images/blog-2.png"></a>
+                    </div>
+                </div>
+            </figure>
+            <figcaption class="level">
+                <small class="level-item has-text-grey">
+                    The blog we'll build. Click to continue on Scrimba
+                </small>
+            </figcaption>
+            <!-- /.columns -->
+            
+        </div>
+    </section>
+    <!-- /.section -->
+
+</body>
+</html>
