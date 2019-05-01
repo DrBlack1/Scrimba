@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>hello, world</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=roboto:
+    400,400i,500,500i,700,700i,900,900i">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/debug.css">
+    <style>
+        article {
+            display: grid;
+            grid-template-columns: 1fr minmax(0, 8.5in) 1fr;
+            height: 100vh; /* temp fix */
+            padding: 0.5in 0;
+        }
+
+        article * { grid-column: 2 / 3;}
+
+        @media (max-width: 8.5in) {
+            article { grid-template-columns: 1fr 5% [start] 90% [end] 5% 1fr; }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- article -->
+    <article>
+        <p class="debug-center">ARTICLE</p>
+    </article>
+
+    <!-- article -->
+    <article>
+        <p class="debug-center">ARTICLE</p>
+    </article>
+</body>
+</html>
