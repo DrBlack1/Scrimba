@@ -5,6 +5,7 @@
   "author": "yourUserName <patrick.mack1@yahoo.com>",
   "private": true,
   "scripts": {
+    "start:dev": "webpack-dev-server",
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "build": "node build/build.js"
