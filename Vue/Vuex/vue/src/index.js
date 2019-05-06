@@ -5,34 +5,30 @@ Vue.use(Vuex);
 
 const store = new Vuex.store({
     state: {
-        todos: [
-            { id: 1, text: '...', done: true },
-            { id: 2, text: '...', done: false },
-        ]
+        count: 0
     },
-    getters: {
-        doneTodos: state => {
-            return state.todos.filter(todo => todo.done);
+    mutations: {
+        increment (state) {
+            state.count++
         },
-        doneTodosCount: (state, getters) => {
-            return getters.doneTodos.length
-        },
-        getTodoById: (state) => (id) => {
-            return state.todos.find(todo => todo.id === id)
+        incrementBy (state, payload) {
+            state.count += payload.amount
         }
     }
 });
 
-import { mapGetters } from 'vaux'
+import { mapState, mapMutations } from 'vaux'
 
 new Vue({
     el: '#app',
     store,
     data: {
     },
-    computed: mapGetters([
-        'doneTodos', 'doneTodosCount', 'getTodoById'
+    computed: mapState([
+        'count'
+    ]),
+    methods: mapMutations([
+        'increment',
+        'incrementBy'
     ])
 });
-
-console.log(state.getters.getTodoById(48))
