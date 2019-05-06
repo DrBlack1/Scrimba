@@ -9,12 +9,26 @@ const store = new Vuex.store({
     }
 });
 
+import { mapState } from 'vaux'
+
 new Vue({
     el: '#app',
     store,
-    computed: {
-        count() {
-            return this.$store.state.count
+    data() {
+        return {
+            localCount: 4
         }
-    }  
+    },
+    computed: mapState([
+        'count'
+    ])
 });
+
+
+// {
+//     count: state => state.count,
+//     countAlias: 'count',
+//     countPlausLocalState (state) {
+//         return state.count + this.localCount
+//     }
+// }
