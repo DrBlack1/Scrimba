@@ -3,7 +3,12 @@ html, body {
     padding: 0;
 }
 #app {
-    width: 1%;
-    margin: 25% auto;
-    font-size: 1.9em;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    margin-top: 20%;
+}
+#app > * {
+    margin-left: 15px;
 }

@@ -11,8 +11,35 @@ const store = new Vuex.store({
         increment (state) {
             state.count++
         },
-        incrementBy (state, payload) {
-            state.count += payload.amount
+        decrement (state) {
+            state.count--
+        }
+    },
+    action: {
+        incrementAsyne ({ commit }) {
+            setTimeout(() => {
+                commit('increment')
+            }, 1000)
+        },
+        actionA ({ commit }) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    commit('someMutation')
+                    resolve()
+                }, 1000)
+            })
+        },
+        actionB ({ dispatch, commit }) {
+            return dispatch('actionA').then(() => {
+                commit('someOtherMutation')
+            })
+        },
+        async actionC ({ commit }) {
+            commit('gotData', await getData())
+        },
+        async actionD ({ dispatch , commit } ) {
+            await dispatch('actionC')
+            commit('gotOtherData', await getOtherData())
         }
     }
 });
@@ -24,11 +51,18 @@ new Vue({
     store,
     data: {
     },
-    computed: mapState([
-        'count'
-    ]),
-    methods: mapMutations([
-        'increment',
-        'incrementBy'
-    ])
+    computed: mapState([ 'count' ]),
+    methods: {
+        increment () {
+            this.$store.dispatch('incrementAsyne');
+        },
+        decrement () {
+            this.$store.commit('decrement');
+        },
+        testAction () {
+            this.$store.dispatch('actionA').then(() => {
+                
+            })
+        }
+    }
 });
