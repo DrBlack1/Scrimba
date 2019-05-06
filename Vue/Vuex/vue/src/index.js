@@ -5,30 +5,34 @@ Vue.use(Vuex);
 
 const store = new Vuex.store({
     state: {
-        count: 0
+        todos: [
+            { id: 1, text: '...', done: true },
+            { id: 2, text: '...', done: false },
+        ]
+    },
+    getters: {
+        doneTodos: state => {
+            return state.todos.filter(todo => todo.done);
+        },
+        doneTodosCount: (state, getters) => {
+            return getters.doneTodos.length
+        },
+        getTodoById: (state) => (id) => {
+            return state.todos.find(todo => todo.id === id)
+        }
     }
 });
 
-import { mapState } from 'vaux'
+import { mapGetters } from 'vaux'
 
 new Vue({
     el: '#app',
     store,
-    data() {
-        return {
-            localCount: 4
-        }
+    data: {
     },
-    computed: mapState([
-        'count'
+    computed: mapGetters([
+        'doneTodos', 'doneTodosCount', 'getTodoById'
     ])
 });
 
-
-// {
-//     count: state => state.count,
-//     countAlias: 'count',
-//     countPlausLocalState (state) {
-//         return state.count + this.localCount
-//     }
-// }
+console.log(state.getters.getTodoById(48))
